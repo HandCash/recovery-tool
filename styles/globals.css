@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme tokens lifted from HandCash's own shadcn theme so this tool looks and
+ * feels like the rest of the HandCash product surface.
+ *   primary       152 100% 50%  — HandCash green
+ *   radius        0.75rem
+ */
+@layer base {
+  :root {
+    --background: 220 13% 9%;
+    --foreground: 0 0% 96%;
+    --card: 220 12% 13%;
+    --card-foreground: 0 0% 96%;
+    --popover: 220 11% 12%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 156 100% 9%;
+    --secondary: 220 10% 17%;
+    --secondary-foreground: 0 0% 92%;
+    --muted: 220 8% 19%;
+    --muted-foreground: 220 6% 55%;
+    --accent: 220 10% 17%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 91% 71%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 9% 22%;
+    --input: 220 9% 17%;
+    --ring: 152 100% 45%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(
+        60rem 40rem at 50% -10rem,
+        hsl(152 100% 50% / 0.09),
+        transparent 60%
+      ),
+      radial-gradient(
+        40rem 30rem at 90% 100%,
+        hsl(152 100% 50% / 0.05),
+        transparent 60%
+      );
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
